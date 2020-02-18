@@ -16,7 +16,6 @@ class RentalManager
         @rented_bikes[customer].each do |i|
             if i.id == id
                 return i.name
-                break
             end
         end
     end
