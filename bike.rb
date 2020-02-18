@@ -1,7 +1,9 @@
 class Bike
-	def initialize(id, type, price)
+	
+	attr_accessor :id, :name
+
+	def initialize(id, name)
 	    @id = id
-	    @type = type
-	    @price = price
+	    @name = name
   	end
 end
