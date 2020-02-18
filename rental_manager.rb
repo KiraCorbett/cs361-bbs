@@ -12,6 +12,15 @@ class RentalManager
         @rented_bikes[customer] = bikes
     end
 
+    def find_bike(customer, id)
+        @rented_bikes[customer].each do |i|
+            if i.id == id
+                return i.name
+                break
+            end
+        end
+    end
+
     def return_bike(customer, id)
         @rented_bikes[customer].each do |i|
             if i.id == id
