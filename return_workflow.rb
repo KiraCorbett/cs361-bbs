@@ -44,9 +44,11 @@ class ReturnWorkflow
 	end
 
 	def run()
-		print_greeting()
-		id = get_returning_bike()
-		calculate_rental_fee()
-		print_farewell()
+		while @rental.number_of_bikes(@customer.name) > 0
+			print_greeting()
+			id = get_returning_bike()
+			calculate_rental_fee()
+			print_farewell()
+		end
 	end
 end
