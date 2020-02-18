@@ -12,15 +12,25 @@ class RentalManager
         @rented_bikes[customer] = bikes
     end
 
+    def return_bike(customer, id)
+        @rented_bikes[customer].each do |i|
+            if i.id == id
+                @rented_bikes[customer].delete(i)
+                break
+            end
+        end
+    end
+
     def number_of_bikes(customer)
         @rented_bikes[customer].length
     end
 
     def print_bikes(customer)
-        str = "Rented Bikes:"
+        str = "("
         @rented_bikes[customer].each do |i|
             str += " " + i.name + " (ID: " + i.id + "),"
         end
-        str.chomp(",")
+        str = str.chomp(",")
+        str += " )"
     end
 end
