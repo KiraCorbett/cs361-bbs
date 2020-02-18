@@ -24,13 +24,16 @@ class ReturnWorkflow
 		puts 'Which bike are you returning? (Please enter the bike ID)'
 		id = gets.strip.chomp
 		puts 'Returning ' + @rental.find_bike(@customer.name, id) + '...'
+		sleep(1)
 		@rental.return_bike(@customer.name, id)
 		return id
 	end
 
 	def calculate_rental_fee() 
 		puts "You have returned this bike on time."
+		sleep(1)
 		puts "You have been charged $30."
+		sleep(1)
 	end
 
 	def print_farewell()
