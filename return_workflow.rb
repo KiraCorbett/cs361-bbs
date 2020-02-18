@@ -34,13 +34,14 @@ class ReturnWorkflow
 		sleep(1)
 		puts "You have been charged $30."
 		sleep(1)
+		puts "Press enter to continue..."
+		gets
 	end
 
 	def print_farewell()
+		puts "All bikes have been returned."
+		sleep(1)
 		puts "Thank you for using Bend Bike Shop!"
-		puts "Press enter to continue..."
-		gets
-		puts ""
 	end
 
 	def run()
@@ -48,7 +49,8 @@ class ReturnWorkflow
 			print_greeting()
 			id = get_returning_bike()
 			calculate_rental_fee()
-			print_farewell()
 		end
+
+		print_farewell()
 	end
 end
