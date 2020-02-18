@@ -1,8 +1,10 @@
 class ReturnWorkflow
-	
-	attr_reader :bike
-	
-	def initialize(bike)
-		@bike = bike
+
+	def initialize()
+
+	end
+
+	def run()
+		puts 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAaaa'
 	end
 end

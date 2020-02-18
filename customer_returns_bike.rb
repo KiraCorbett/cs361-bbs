@@ -1,5 +1,5 @@
-require 'return_worfklow'
+require_relative 'return_workflow'
 
 workflow = ReturnWorkflow.new
 
-puts 'hello world'
+workflow.run
