@@ -2,7 +2,7 @@
 
 class RentalManager
 
-    attr_accessor :customer_bikes
+    attr_accessor :rented_bikes
 
     def initialize()
         @rented_bikes = Hash.new
@@ -14,5 +14,13 @@ class RentalManager
 
     def number_of_bikes(customer)
         @rented_bikes[customer].length
+    end
+
+    def print_bikes(customer)
+        str = "Rented Bikes:"
+        @rented_bikes[customer].each do |i|
+            str += " " + i.name + " (ID: " + i.id + "),"
+        end
+        str.chomp(",")
     end
 end
