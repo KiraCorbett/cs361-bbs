@@ -26,7 +26,6 @@ class ReturnWorkflow
     puts 'Returning ' + @rental.find_bike(@customer.name, id) + '...'
     sleep(1)
     @rental.return_bike(@customer.name, id)
-    return id
   end
 
   def calculate_rental_fee() 
@@ -47,7 +46,7 @@ class ReturnWorkflow
   def run()
     while @rental.number_of_bikes(@customer.name) > 0
       print_greeting
-      id = get_returning_bike
+      get_returning_bike
       calculate_rental_fee
     end
 
