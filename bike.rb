@@ -1,9 +1,8 @@
 class Bike
-	attr_reader :id, :name, :color
+  attr_accessor :id, :name
 
-	def initialize(id, name, color)
-		@id = id
-		@name = name
-		@color = color
-	end
+  def initialize(id, name)
+    @id = id
+    @name = name
+  end
 end
