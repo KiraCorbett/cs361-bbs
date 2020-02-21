@@ -18,9 +18,20 @@ class ReserveWorkflow
     @rental.check_inventory(type)
   end
 
+ def display_inventory_with_message
+
+   puts("Our inventory includes the following: ")
+   @rental.display_all_inventory
+ end
+
   def run()
   	welcome
+    display_inventory_with_message
     get_bike_type
   end
+
+
+  starter = ReserveWorkflow.new()
+  starter.run
 
 end

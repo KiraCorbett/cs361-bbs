@@ -17,4 +17,8 @@ class InventoryManager
 			end
 		end
 	end
-end
+
+	def display_all_inventory()
+		@inventory.each { |x| puts x}
+   end
+ end
