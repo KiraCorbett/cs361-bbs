@@ -14,12 +14,11 @@ class ReserveWorkflow
 
   def get_bike_type()
     puts("What type of bike would you like to reserve?")
-    type = gets.strip.chomp
-    @rental.check_inventory(type)
+    inputted_bike_type = gets.strip.chomp
+    @rental.check_inventory(inputted_bike_type)
   end
 
  def display_inventory_with_message
-
    puts("Our inventory includes the following: ")
    @rental.display_all_inventory
  end
@@ -30,7 +29,7 @@ class ReserveWorkflow
     get_bike_type
   end
 
-
+  #test only. remove after testing!
   starter = ReserveWorkflow.new()
   starter.run
 
