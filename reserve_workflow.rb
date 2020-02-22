@@ -29,8 +29,4 @@ class ReserveWorkflow
     get_bike_type
   end
 
-  #test only. remove after testing!
-  starter = ReserveWorkflow.new()
-  starter.run
-
 end
