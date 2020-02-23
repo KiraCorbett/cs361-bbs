@@ -46,6 +46,7 @@ class ReserveWorkflow
     when 'y'
       display_inventory_with_message
       get_bike_type
+      get_reservation_request
     when 'n'
       puts "Thank you for visiting the Bend Bike Shop!"
     else
