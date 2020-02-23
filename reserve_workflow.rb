@@ -13,14 +13,28 @@ class ReserveWorkflow
   end
 
   def get_bike_type()
-    puts("What type of bike would you like to reserve?")
+    puts "What type of bike would you like to reserve?"
     inputted_bike_type = gets.strip.chomp
-    @rental.check_inventory(inputted_bike_type)
+    if @rental.check_inventory(inputted_bike_type) == true
+      reserve_bike(inputted_bike_type)
+    else
+      puts inputted_bike_type + ' is not a valid bike!'
+      puts "..." 
+      get_bike_type
+    end
   end
 
  def display_inventory_with_message
    puts("Our inventory includes the following: ")
    @rental.display_all_inventory
+ end
+
+ def reserve_bike(inputted_bike_type)
+  id = rand(1..99)
+  Bike.new(id, inputted_bike_type)
+  puts "..."
+  puts 'Your ' + inputted_bike_type +  ' bike has been reserved! '
+  puts "The ID for your bike's reservation is " + id.to_s +  '! '
  end
 
   def run()
