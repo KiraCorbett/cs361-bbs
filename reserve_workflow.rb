@@ -37,10 +37,27 @@ class ReserveWorkflow
   puts "The ID for your bike's reservation is " + id.to_s +  '! '
  end
 
+ def get_reservation_request()
+  puts "..."
+  puts "Would you like to reserve another bike (Y or N?)"
+  reservation_request = gets.strip.chomp.downcase
+
+    case (reservation_request)
+    when 'y'
+      display_inventory_with_message
+      get_bike_type
+    when 'n'
+      puts "Thank you for visiting the Bend Bike Shop!"
+    else
+      puts "Please enter a valid request (Y or N)."
+    end
+end
+
   def run()
   	welcome
     display_inventory_with_message
     get_bike_type
+    get_reservation_request
   end
 
 end
