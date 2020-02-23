@@ -51,6 +51,7 @@ class ReserveWorkflow
       puts "Thank you for visiting the Bend Bike Shop!"
     else
       puts "Please enter a valid request (Y or N)."
+      get_reservation_request
     end
 end
 
