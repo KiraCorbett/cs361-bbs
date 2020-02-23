@@ -19,7 +19,7 @@ class ReserveWorkflow
 
   def get_bike_type()
     puts "What type of bike would you like to reserve?"
-    inputted_bike_type = gets.strip.chomp.capitalize
+    inputted_bike_type = gets.strip.chomp
     if @rental.check_inventory(inputted_bike_type) == true
       reserve_bike(inputted_bike_type)
     else
