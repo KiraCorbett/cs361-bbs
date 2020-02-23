@@ -12,6 +12,11 @@ class ReserveWorkflow
   	puts("Welcome to Bend Bike Shop!")
   end
 
+  def display_inventory_with_message
+   puts("Our inventory includes the following: ")
+   @rental.display_all_inventory
+  end
+
   def get_bike_type()
     puts "What type of bike would you like to reserve?"
     inputted_bike_type = gets.strip.chomp
@@ -23,11 +28,6 @@ class ReserveWorkflow
       get_bike_type
     end
   end
-
- def display_inventory_with_message
-   puts("Our inventory includes the following: ")
-   @rental.display_all_inventory
- end
 
  def reserve_bike(inputted_bike_type)
   id = rand(1..99)
