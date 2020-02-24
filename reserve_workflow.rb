@@ -3,6 +3,7 @@ require_relative 'bike'
 require_relative 'inventory_manager'
 
 class ReserveWorkflow
+
   def initialize()
    @rental = InventoryManager.new
   end
@@ -60,5 +61,4 @@ end
     get_bike_type
     get_reservation_request
   end
-
 end
