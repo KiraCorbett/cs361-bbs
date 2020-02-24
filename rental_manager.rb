@@ -20,6 +20,22 @@ class RentalManager
     end
   end
 
+  def select_bike(isCancel)
+    cancelling = ' '
+
+    if isCancel
+      cancelling = 'cancelling'
+    else
+      cancelling = 'returning'
+    end
+
+    puts 'Which bike are you' + cancelling? + '? (Please enter the bike ID)'
+    id = gets.strip.chomp
+    puts 'Returning ' + find_bike(@customer.name, id) + '...'
+    sleep(1)
+    return_bike(@customer.name, id)
+  end
+
   def return_bike(customer, id)
   	@rented_bikes[customer].each do |i|
     	if i.id == id
