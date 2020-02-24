@@ -3,24 +3,23 @@ require_relative 'bike'
 require_relative 'inventory_manager'
 
 class ReserveWorkflow
-  def initialize ()
-   @customer = Customer.new('Joe')
+  def initialize()
    @rental = InventoryManager.new
   end
 
   def welcome()
-  	puts("Welcome to Bend Bike Shop!")
+  	puts "Welcome to Bend Bike Shop!"
   end
 
   def display_inventory_with_message
-   puts("Our inventory includes the following: ")
+   puts "Our inventory includes the following: "
    @rental.display_all_inventory
   end
 
   def get_bike_type()
     puts "What type of bike would you like to reserve?"
     inputted_bike_type = gets.strip.chomp
-    if @rental.check_inventory(inputted_bike_type) == true
+    if @rental.check_inventory(inputted_bike_type)
       reserve_bike(inputted_bike_type)
     else
       puts inputted_bike_type + ' is not a valid bike!'
