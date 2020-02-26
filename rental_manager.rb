@@ -20,20 +20,11 @@ class RentalManager
     end
   end
 
-  def select_bike(isCancel)
-    cancelling = ' '
-
-    if isCancel
-      cancelling = 'cancelling'
-    else
-      cancelling = 'returning'
-    end
-
-    puts 'Which bike are you' + cancelling? + '? (Please enter the bike ID)'
+  def select_bike(customer)
+    puts 'Which bike would you like to select? (Please enter the bike ID)'
     id = gets.strip.chomp
-    puts 'Returning ' + find_bike(@customer.name, id) + '...'
+    puts 'Finding ' + find_bike(customer, id) + '...'
     sleep(1)
-    return_bike(@customer.name, id)
   end
 
   def return_bike(customer, id)

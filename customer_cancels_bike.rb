@@ -1,9 +1,5 @@
-require_relative 'customer'
-require_relative 'rental_manager'
+require_relative 'cancel_workflow'
 
-class CancellationWorkflow
+workflow = CancellationWorkflow.new
 
-  def get_cancelling_bike()
-    @rental.select_bike(True)
-  end
-end
+workflow.run
