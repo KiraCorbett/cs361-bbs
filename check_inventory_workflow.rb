@@ -17,7 +17,7 @@ class CheckInventoryWorkflow
     puts "--------------------------------"
     puts "%-10s|%10s |%7s" % ["BIKE TYPE", "AVAILABLE", "TOTAL"]
     puts "--------------------------------"
-    @inventory.check_detailed_inventory
+    @inventory.display_detailed_inventory
   end
 
   def run()
