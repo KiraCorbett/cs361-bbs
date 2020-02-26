@@ -25,6 +25,7 @@ class RentalManager
     id = gets.strip.chomp
     puts 'Finding ' + find_bike(customer, id) + '...'
     sleep(1)
+    return_bike(customer, id)
   end
 
   def return_bike(customer, id)
