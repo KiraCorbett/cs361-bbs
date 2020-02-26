@@ -1,17 +1,19 @@
+require_relative 'bike_type'
+
 class InventoryManager
 
   attr_accessor :type
 
 	def initialize()
-		@inventory = ["Road","Mountain","Cross","Unicycle","Tricycle", "High Wheel"]
+		@inventory = [BikeType.new("Road"),BikeType.new("Mountain"),BikeType.new("Cross"),BikeType.new("Unicycle"),BikeType.new("Tricycle"),BikeType.new("High Wheel")]
 	end
 
 	def check_inventory(inputted_bike_type)
-		return @inventory.include? inputted_bike_type
+		return @inventory.any? {|bike| bike.name = inputted_bike_type}
   end
 
 	def display_all_inventory()
-		@inventory.each { |x| puts x}
+		@inventory.each {|bike| puts bike.name}
     puts "..."
   end
 
