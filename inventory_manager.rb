@@ -17,6 +17,10 @@ class InventoryManager
     puts "..."
   end
 
+  def display_detailed_inventory()
+    @inventory.each {|bike| puts "%-10s|%10d |%7d" % [bike.name, bike.available, bike.total]}
+  end
+
   def add_to_inventory(x)
 		 @inventory << x
   end
