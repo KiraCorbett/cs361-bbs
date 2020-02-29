@@ -1,8 +1,10 @@
-require_relative bike_type
+require_relative 'bike_type'
+
 class BikeRental
 
- def initialize(bike_type_name)
-   @bike_type = bike_type.new(bike_type_name)
+ def initialize(customer_name,date_rented)
+   @customer_name = ""
+   @date_rented = ""
 
  end
 

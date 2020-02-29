@@ -13,7 +13,7 @@ class CheckBikeTypeInventoryWorkflow
     puts "..."
   end
 
-  def check_inventory() # knows to much
+  def check_inventory()
     puts "--------------------------------"
     puts "%-10s|%10s |%7s" % ["BIKE TYPE", "AVAILABLE", "TOTAL"]
     puts "--------------------------------"
