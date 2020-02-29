@@ -4,8 +4,6 @@ require_relative 'rental_manager'
 
 class CancellationWorkflow
 
-  attr_accessor :customer, :rental
-
   def initialize()
     @customer = Customer.new('Shirai')
     @rental = RentalManager.new
@@ -21,6 +19,7 @@ class CancellationWorkflow
   end
 
   def get_cancelling_bike()
+    puts 'Which reservation would you like to cancel?'
     @rental.select_bike(@customer.name)
   end
 

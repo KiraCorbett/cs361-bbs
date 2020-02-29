@@ -21,7 +21,6 @@ class RentalManager
   end
 
   def select_bike(customer)
-    puts 'Which bike would you like to select? (Please enter the bike ID)'
     id = gets.strip.chomp
     puts 'Finding ' + find_bike(customer, id) + '...'
     sleep(1)
