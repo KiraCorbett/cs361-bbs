@@ -1,9 +1,9 @@
-require_relative 'inventory_manager'
+require_relative 'bike_type_inventory_manager'
 
-class CheckInventoryWorkflow
+class CheckBikeTypeInventoryWorkflow
 
   def initialize()
-    @inventory = InventoryManager.new()
+    @inventory = BikeTypeInventoryManager.new()
   end
 
   def welcome()

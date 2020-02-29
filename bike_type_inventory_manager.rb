@@ -1,6 +1,6 @@
 require_relative 'bike_type'
 
-class InventoryManager
+class BikeTypeInventoryManager
   #the old name "inventory" was not descriptive enough
   attr_accessor :type
 
