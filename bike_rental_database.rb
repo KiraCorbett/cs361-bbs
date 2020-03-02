@@ -1,9 +1,6 @@
 require_relative 'bike_rental'
 class BikeRentalDatabase
   attr_accessor :test
-def self.test
-  puts("yo")
-end
 
 def initialize(rentals)
   @rentals = rentals
