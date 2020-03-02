@@ -1,4 +1,3 @@
-
 require_relative 'bike_rental'
 class BikeRentalDatabase
   attr_accessor :test

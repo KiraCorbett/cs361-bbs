@@ -1,5 +1,3 @@
-
-
 class RentalManager
 
   attr_accessor :rented_bikes
@@ -18,6 +16,13 @@ class RentalManager
         return i.name
       end
     end
+  end
+
+  def select_bike(customer)
+    id = gets.strip.chomp
+    puts 'Finding ' + find_bike(customer, id) + '...'
+    sleep(1)
+    return_bike(customer, id)
   end
 
   def return_bike(customer, id)
