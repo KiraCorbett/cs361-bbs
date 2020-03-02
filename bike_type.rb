@@ -9,5 +9,4 @@ class BikeType
     @expected_return_in_hour = rand(1..10)
     @expected_return_in_day = rand(1..4)
   end
-
 end
