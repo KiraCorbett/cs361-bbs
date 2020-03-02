@@ -13,7 +13,5 @@ def print_all_rentals()
   @rentals.each do |num|
     puts num.print_rental_row
 end
-
 end
-
 end
