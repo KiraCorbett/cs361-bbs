@@ -5,12 +5,6 @@ require_relative 'end_rental_workflow'
 
 class CancellationWorkflow < EndRentalWorkflow
 
-  def print_greeting()
-    puts 'Hello ' + @customer.name + ','
-    puts 'You have ' + @rental.number_of_bikes(@customer.name).to_s + ' rented bikes.'
-    puts @rental.print_bikes(@customer.name)
-  end
-
   def get_cancelling_bike()
     puts 'Which reservation would you like to cancel?'
     @rental.select_bike(@customer.name)

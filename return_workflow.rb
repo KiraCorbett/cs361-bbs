@@ -7,12 +7,6 @@ class ReturnWorkflow < EndRentalWorkflow
 
   attr_accessor :customer, :rental
 
-  def print_greeting()
-    puts 'Hello ' + @customer.name + ','
-    puts 'You have ' + @rental.number_of_bikes(@customer.name).to_s + ' rented bikes.'
-    puts @rental.print_bikes(@customer.name)
-  end
-
   def get_returning_bike()
     @rental.select_bike(@customer.name)
   end
