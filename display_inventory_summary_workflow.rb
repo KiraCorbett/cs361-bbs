@@ -5,7 +5,7 @@ class DisplayInventorySummaryWorkflow
   def initialize()
     @inventory = InventorySummary.new()
   end
-
+   #test
   def welcome()
     puts "Hi There, Mr.Manager!"
     puts "Here's all of the bikes we have in stock, the number currently"
