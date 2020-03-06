@@ -1,4 +1,4 @@
-class BikeType
+class RentalType
 
   attr_accessor :name, :available, :total, :expected_return_in_day, :expected_return_in_hour
 

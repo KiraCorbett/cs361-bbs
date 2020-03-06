@@ -1,9 +1,9 @@
-require_relative 'bike_type_inventory_manager'
+require_relative 'inventory_summary'
 
-class CheckInventoryWorkflow
+class DisplayInventorySummaryWorkflow
 
   def initialize()
-    @inventory = BikeTypeInventoryManager.new()
+    @inventory = InventorySummary.new()
   end
 
   def welcome()
@@ -13,11 +13,11 @@ class CheckInventoryWorkflow
     puts "..."
   end
 
-  def check_inventory()
+  def check_inventory()#disp inventory
     puts "--------------------------------"
     puts "%-10s|%10s |%7s" % ["BIKE TYPE", "AVAILABLE", "TOTAL"]
     puts "--------------------------------"
-    @inventory.display_detailed_bike_type_inventory
+    @inventory.display_detailed_rental_type_inventory
   end
 
   def run()
