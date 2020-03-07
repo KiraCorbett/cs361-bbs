@@ -6,10 +6,10 @@ class CancellationWorkflow
     @rental_database = RentalDatabase.new
   end
 
-  def get_cancelling_bike()
+  def get_reservation()
     @rental_database.print_all_rentals
-    puts 'Which reservation would you like to cancel?'
-    #@rental.select_bike(@customer.name)
+    puts 'Which reservation would you like to cancel? (Please enter the Rental ID.)'
+    reservation_input = gets.strip.chomp.downcase
   end
 
   def confirm_cancellation() 
@@ -20,7 +20,7 @@ class CancellationWorkflow
   end
 
   def run()
-      get_cancelling_bike
-      confirm_cancellation
+      get_reservation
+      #confirm_cancellation
   end
 end
