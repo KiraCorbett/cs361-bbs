@@ -1,9 +1,8 @@
 require_relative 'bike'
 require_relative 'customer'
 require_relative 'rental_manager'
-require_relative 'end_rental_workflow'
 
-class ReturnWorkflow < EndRentalWorkflow
+class ReturnWorkflow
 
   attr_accessor :customer, :rental
 
