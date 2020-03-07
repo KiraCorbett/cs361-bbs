@@ -1,4 +1,4 @@
-require_relative 'bike_type'
+require_relative 'rental_type'
 
 class BikeRental
  attr_accessor :print_rental
