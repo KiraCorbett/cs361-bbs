@@ -5,24 +5,24 @@ class DisplayInventorySummaryWorkflow
   def initialize()
     @inventory = InventorySummary.new()
   end
-   #test
+   
   def welcome()
     puts "Hi There, Mr.Manager!"
-    puts "Here's all of the bikes we have in stock, the number currently"
-    puts "available and then total number of that type of bike we have!"
+    puts "Here's a Retport of the Rentalable items we have in stock, the number currently"
+    puts "available and then total number of that type of that item we have!"
     puts "..."
   end
 
-  def check_inventory()#disp inventory
+  def display_inventory()
     puts "--------------------------------"
-    puts "%-10s|%10s |%7s" % ["BIKE TYPE", "AVAILABLE", "TOTAL"]
+    puts "%-12s|%10s |%7s" % ["RENTAL TYPE", "AVAILABLE", "TOTAL"]
     puts "--------------------------------"
     @inventory.display_detailed_rental_type_inventory
   end
 
   def run()
     welcome
-    check_inventory
+    display_inventory
   end
 
 end
