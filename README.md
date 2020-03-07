@@ -7,3 +7,4 @@ In-class Better Bend Bike Shop
 - Customer Cancels Reservation: `ruby customer_cancels_bike.rb`
 - Manager Checks Inventory: `ruby manager_checks_inventory.rb`
 - Testing Inventory Database: `ruby bike_rental_database.rb`
+- Manager checks summary report `ruby manager_checks_summary_report`

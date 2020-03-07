@@ -24,7 +24,7 @@ class ReserveWorkflow
       reserve_bike(inputted_bike_type)
     else
       puts inputted_bike_type + ' is not a valid bike!'
-      puts "..." 
+      puts "..."
       get_bike_type
     end
   end
