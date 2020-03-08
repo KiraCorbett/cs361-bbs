@@ -1,12 +1,27 @@
-require_relative 'bike_rental_database'
-require_relative 'bike_rental'
+require_relative 'reservation'
 
 class TestDatabase
 
-  def run()
-    a = BikeRentalDatabase.new([BikeRental.new("john","125","12/16/2010","12/18/2010",1),
-        BikeRental.new("jane","122","12/17/2010","12/18/2010",2),
-        BikeRental.new("kate","567","12/19/2010","12/20/2010",2)])
-    a.print_all_rentals
-  end
+	def initialize()
+		@rentals = [Reservation.new("john", "010", "12/16/2010", "12/18/2010", 1),
+					Reservation.new("jane", "130", "12/17/2010", "12/18/2010", 2),
+					Reservation.new("kate", "125", "12/13/2010", "12/20/2010", 1)]
+	end
+
+  	def cancel_reservation()
+  		@rentals.each do |i|
+  			@rentals.delete(i)
+  		end
+  	end
+
+	def print_all_rentals()
+		@rentals.each do |num|
+			puts num.print_rental_row
+		end
+	end
+
+	def run
+		print_all_rentals
+	end
 end
+

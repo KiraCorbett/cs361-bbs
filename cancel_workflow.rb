@@ -1,19 +1,19 @@
-require_relative 'rental_database'
+require_relative 'test_database'
 
 class CancellationWorkflow
 
   def initialize()
-    @rental_database = RentalDatabase.new
+    @test_database = TestDatabase.new
   end
 
   def get_reservation()
-    @rental_database.print_all_rentals
+    @test_database.print_all_rentals
     puts 'Which reservation would you like to cancel? (Please enter the Rental ID.)'
     reservation_input = gets.strip.chomp
 
       if reservation_input.to_i.to_s == reservation_input
         puts 'Cancelling reservation ' + reservation_input
-        @rental_database.cancel_reservation
+        @test_database.cancel_reservation
         sleep(1)
         #@rental_database.print_all_rentals
       else 
