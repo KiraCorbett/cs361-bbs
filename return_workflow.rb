@@ -1,6 +1,7 @@
 require_relative 'bike'
 require_relative 'customer'
 require_relative 'rental_manager'
+require_relative 'kayak'
 
 class ReturnWorkflow
 
@@ -11,7 +12,9 @@ class ReturnWorkflow
     @rental = RentalManager.new
     @rental.add_customer_rental(@customer.name, [Bike.new('01', 'Mountain Bike'), \
     Bike.new('02', 'Road Bike'), \
-    Bike.new('03', 'Triathlon Bike')])
+    Bike.new('03', 'Triathlon Bike'), \
+    Kayak.new('04', 'Red Kayak'), \
+    Kayak.new('05', 'Blue Kayak')])
   end
 
   def print_greeting()
