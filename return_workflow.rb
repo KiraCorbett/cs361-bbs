@@ -14,7 +14,8 @@ class ReturnWorkflow
     Bike.new('02', 'Road Bike'), \
     Bike.new('03', 'Triathlon Bike'), \
     Kayak.new('04', 'Red Kayak'), \
-    Kayak.new('05', 'Blue Kayak')])
+    Kayak.new('05', 'Blue Kayak'), \
+    Kayak.new('06', 'Green Kayak')])
   end
 
   def print_greeting()
