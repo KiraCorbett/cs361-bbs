@@ -5,7 +5,11 @@ require_relative 'inventory_summary'
 class ReserveWorkflow
 
   def initialize()
+<<<<<<< HEAD
    @rental = InventorySummary.new
+=======
+    @rental = BikeTypeInventoryManager.new
+>>>>>>> 05-kayak-return-flow
   end
 
   def welcome()
@@ -13,8 +17,13 @@ class ReserveWorkflow
   end
 
   def display_inventory_with_message
+<<<<<<< HEAD
    puts "Our inventory includes the following: "
    @rental.display_all_rental_type_inventory
+=======
+    puts "Our inventory includes the following: "
+    @rental.display_all_bike_type_inventory
+>>>>>>> 05-kayak-return-flow
   end
 
   def get_bike_type()

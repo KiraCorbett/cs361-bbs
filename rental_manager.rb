@@ -3,44 +3,44 @@ class RentalManager
   attr_accessor :rented_bikes
 
   def initialize()
-    @rented_bikes = Hash.new
+    @rented_inventory = Hash.new
   end
 
-  def add_customer_bikes(customer, bikes)
-    @rented_bikes[customer] = bikes
+  def add_customer_rental(customer, rental)
+    @rented_inventory[customer] = rental
   end
 
-  def find_bike(customer, id)
-    @rented_bikes[customer].each do |i|
+  def find_rental(customer, id)
+    @rented_inventory[customer].each do |i|
       if i.id == id
         return i.name
       end
     end
   end
 
-  def select_bike(customer)
+  def select_rental(customer)
     id = gets.strip.chomp
-    puts 'Finding ' + find_bike(customer, id) + '...'
+    puts 'Finding ' + find_rental(customer, id) + '...'
     sleep(1)
-    return_bike(customer, id)
+    return_rental(customer, id)
   end
 
-  def return_bike(customer, id)
-  	@rented_bikes[customer].each do |i|
+  def return_rental(customer, id)
+  	@rented_inventory[customer].each do |i|
     	if i.id == id
-        @rented_bikes[customer].delete(i)
+        @rented_inventory[customer].delete(i)
         break
       end
     end
   end
 
-  def number_of_bikes(customer)
-    @rented_bikes[customer].length
+  def number_of_rentals(customer)
+    @rented_inventory[customer].length
   end
 
-  def print_bikes(customer)
+  def print_rentals(customer)
     str = "("
-    @rented_bikes[customer].each do |i|
+    @rented_inventory[customer].each do |i|
       str += " " + i.name + " (ID: " + i.id + "),"
     end
     str = str.chomp(",")
