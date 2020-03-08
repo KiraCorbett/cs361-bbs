@@ -10,6 +10,13 @@ class CancellationWorkflow
     @rental_database.print_all_rentals
     puts 'Which reservation would you like to cancel? (Please enter the Rental ID.)'
     reservation_input = gets.strip.chomp.downcase
+    if @rental_database.is_reservation(reservation_input)
+      puts 'cancelling bike'
+    else 
+      puts reservation_input + ' is not a valid reservation!'
+      puts "..."
+      get_reservation
+    end
   end
 
   def confirm_cancellation() 
