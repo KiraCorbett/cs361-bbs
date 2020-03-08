@@ -28,13 +28,8 @@ class ReturnWorkflow
     @rental.select_rental(@customer.name)
   end
 
-<<<<<<< HEAD
-  def calculate_rental_fee()
-    puts "You have returned this bike on time."
-=======
   def calculate_rental_fee() 
     puts "You have returned this on time."
->>>>>>> 05-kayak-return-flow
     sleep(1)
     puts "You have been charged $30."
     sleep(1)
