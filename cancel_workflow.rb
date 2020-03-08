@@ -12,6 +12,9 @@ class CancellationWorkflow
     reservation_input = gets.strip.chomp.downcase
     if @rental_database.is_reservation(reservation_input)
       puts 'cancelling bike'
+      @rental_database.cancel_rental
+      puts 'cancelled bike'
+      @rental_database.print_all_rentals
     else 
       puts reservation_input + ' is not a valid reservation!'
       puts "..."
@@ -20,10 +23,9 @@ class CancellationWorkflow
   end
 
   def confirm_cancellation() 
-    puts "You have cancelled this bike reservation."
+    puts 'You have cancelled this bike reservation.'
     sleep(1)
-    puts "Press enter to continue..."
-    gets
+    puts 'Thank you for visiting the Bend Bike Shop!'
   end
 
   def run()

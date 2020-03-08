@@ -12,6 +12,13 @@ class RentalDatabase
 		return @rentals.any? {|rental| rental.rental_id = reservation_input}
   	end
 
+  	def cancel_rental
+  		@rentals.each do |i|
+  			@rentals.delete(i)
+  			break
+  		end
+  	end
+
 	def print_all_rentals()
 		@rentals.each do |num|
 			puts num.print_rental_row
