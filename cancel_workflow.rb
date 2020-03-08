@@ -12,12 +12,9 @@ class CancellationWorkflow
     reservation_input = gets.strip.chomp
 
       if reservation_input.to_i.to_s == reservation_input
-        puts 'cancelling bike'
+        puts 'Cancelling reservation ' + reservation_input
+        @rental_database.cancel_reservation
         sleep(1)
-        @rental_database.get_reservation
-        @rental_database.cancel_rental()
-        puts 'cancelled bike'
-        @rental_database.get_reservation
         #@rental_database.print_all_rentals
       else 
         puts reservation_input + ' is not a valid reservation!'
@@ -27,13 +24,13 @@ class CancellationWorkflow
   end
 
   def confirm_cancellation() 
-    puts 'You have cancelled this bike reservation.'
+    puts 'You have cancelled this reservation.'
     sleep(1)
     puts 'Thank you for visiting the Bend Bike Shop!'
   end
 
   def run()
       get_reservation
-      #confirm_cancellation
+      confirm_cancellation
   end
 end

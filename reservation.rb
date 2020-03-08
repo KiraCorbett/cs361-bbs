@@ -4,8 +4,8 @@ class Reservation
 	attr_accessor :print_rental, :rental_id
  
  	def initialize(customer_name, rental_id, date_rented, rented_qty)
-	   @customer_name = customer_name
 	   @rental_id = rental_id
+	   @customer_name = customer_name
 	   @date_rented = date_rented
 	   @rented_qty = rented_qty
 	end
