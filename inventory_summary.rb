@@ -5,15 +5,26 @@ class InventorySummary
   attr_accessor :type
 
 	def initialize()
-		@inventory = [RentalType.new("Road"),RentalType.new("Mountain"),RentalType.new("Cross"),RentalType.new("Unicycle"),RentalType.new("Tricycle"),RentalType.new("High Wheel"),RentalType.new("Kayak")]
-	end
+		@bike_inventory = [RentalType.new("Road"), RentalType.new("Mountain"), RentalType.new("Cross"), RentalType.new("Unicycle"), RentalType.new("Tricycle"), RentalType.new("High Wheel")]
+    @kayak_inventory = [RentalType.new("Racing"), RentalType.new("Fishing"), RentalType.new("Diving")]
+    @inventory = @kayak_inventory + @bike_inventory
+	  @rental_type = ["Bike", "Kayak"]
+  end
+
+  def display_inventory_type()
+    @rental_type.each {|type| puts type }
+  end
 
 	def check_rental_type_inventory(inputted_rental_type)
 		return @inventory.any? {|rentalType| rentalType.name = inputted_rental_type}
   end
 
-	def display_all_rental_type_inventory()
-		@inventory.each {|rentalType| puts rentalType.name}
+	def display_all_rental_type_inventory(type)
+		if type == "Bike"
+      @inventory.each {|rentalType| puts rentalType.name}
+    elsif type = "Kayak"
+      @inventory.each {|rentalType| puts rentalType.name}
+    end
     puts "..."
   end
 
