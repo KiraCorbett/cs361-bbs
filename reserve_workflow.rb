@@ -1,5 +1,6 @@
 require_relative 'customer'
 require_relative 'bike'
+require_relative 'kayak'
 require_relative 'inventory_summary'
 
 class ReserveWorkflow
@@ -27,18 +28,22 @@ class ReserveWorkflow
   def display_inventory_with_message(rental_category)
    puts "Our inventory includes the following: "
    @rental.display_rental_type_inventory(rental_category)
+   get_rental_type(rental_category)
   end
 
-  def get_rental_type(rental_type)
-    puts "What type of "+rental_type+" would you like to reserve?"
-    inputted_bike_type = gets.strip.chomp
-
-    if @rental.check_rental_type_inventory(inputted_bike_type)
-      reserve_bike(inputted_bike_type)
+  def get_rental_type(rental_category)
+    puts "What type of "+rental_category+" would you like to reserve?"
+    inputted_rental_type = gets.strip.chomp
+    if rental_category == "Kayak"
+      if @rental.check_rental_type_inventory(inputted_rental_type)
+        reserve_rental(inputted_rental_type)
+      elsif @rental.check_rental_type_inventory(inputted_rental_type)
+        reserve_rental(inputted_rental_type)
+      end
     else
-      puts inputted_bike_type + ' is not a valid bike!'
+      puts inputted_rental_type + ' is not a valid '+rental_category+'!'
       puts "..."
-      get_bike_type
+      get_rental_type
     end
   end
 
@@ -70,6 +75,6 @@ end
 
   def run()
   	welcome
-    get_rental_type
+    get_rental_category
   end
 end
