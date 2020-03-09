@@ -19,11 +19,11 @@ class InventorySummary
 		return @inventory.any? {|rentalType| rentalType.name = inputted_rental_type}
   end
 
-	def display_all_rental_type_inventory(type)
+	def display_rental_type_inventory(type)
 		if type == "Bike"
-      @inventory.each {|rentalType| puts rentalType.name}
+      @bike_inventory.each {|rentalType| puts rentalType.name}
     elsif type == "Kayak"
-      @inventory.each {|rentalType| puts rentalType.name}
+      @kayak_inventory.each {|rentalType| puts rentalType.name}
     end
     puts "..."
   end
