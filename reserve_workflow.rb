@@ -12,23 +12,27 @@ class ReserveWorkflow
   	puts "Welcome to Bend Bike Shop!"
   end
 
-  def get_rental_type()
-    puts "Here's a selection of the rentals we currently have!"
+  def get_rental_category()
+    puts "Here's a selection of the rental categories we currently have to choose from!"
     @rental.display_inventory_type
-    inputted_rental_type = gets.strip.chomp 
-    if @rental.rental_type.include? inputted_rental_type
-      display_inventory_with_message(inputted_rental_type)
+    inputted_rental_category = gets.strip.chomp 
+    if @rental.rental_category.include? inputted_rental_category
+      display_inventory_with_message(inputted_rental_category)
+    else
+      puts "Please try again..."
+      get_rental_category
     end
   end
 
-  def display_inventory_with_message(rental_type)
+  def display_inventory_with_message(rental_category)
    puts "Our inventory includes the following: "
-   @rental.display_rental_type_inventory(rental_type)
+   @rental.display_rental_type_inventory(rental_category)
   end
 
-  def get_bike_type()
-    puts "What type of bike would you like to reserve?"
+  def get_rental_type(rental_type)
+    puts "What type of "+rental_type+" would you like to reserve?"
     inputted_bike_type = gets.strip.chomp
+
     if @rental.check_rental_type_inventory(inputted_bike_type)
       reserve_bike(inputted_bike_type)
     else
