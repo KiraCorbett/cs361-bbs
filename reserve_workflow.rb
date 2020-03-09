@@ -51,7 +51,7 @@ class ReserveWorkflow
   rental.new(id, rental_type)
   puts "..."
   puts 'Your ' + rental_type +  ' '+rental_category+' has been reserved! '
-  puts "The ID for your "+rental_category+"'s reservation is " + id.to_s +  '! '
+  puts "The ID for your "+rental_type+" "+rental_category+"'s reservation is " + id.to_s +  '! '
   get_reservation_request(rental_category)
  end
 
