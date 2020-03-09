@@ -16,6 +16,8 @@ class ReserveWorkflow
   def get_rental_category()
     puts "Here's a selection of the rental categories we currently have to choose from!"
     @rental.display_inventory_type
+    puts "..."
+    puts "What rental category would you like to pick from?"
     inputted_rental_category = gets.strip.chomp 
     if @rental.rental_category.include? inputted_rental_category
       display_inventory_with_message(inputted_rental_category)
@@ -50,20 +52,19 @@ class ReserveWorkflow
   puts "..."
   puts 'Your ' + rental_type +  ' '+rental_category+' has been reserved! '
   puts "The ID for your "+rental_category+"'s reservation is " + id.to_s +  '! '
+  get_reservation_request(rental_category)
  end
 
- def get_reservation_request()
+ def get_reservation_request(rental_category)
   puts "..."
-  puts "Would you like to reserve another bike (Y or N?)"
+  puts "Would you like to reserve another "+rental_category+" (Y or N?)"
   reservation_request = gets.strip.chomp.downcase
 
     case (reservation_request)
     when 'y'
-      display_inventory_with_message
-      get_bike_type
-      get_reservation_request
+      display_inventory_with_message(rental_category)
     when 'n'
-      puts "Thank you for visiting the Bend Bike Shop!"
+      puts "Thank you for visiting the Bend Bike & Kayak Shop!"
     else
       puts "Please enter a valid request (Y or N)."
       get_reservation_request
