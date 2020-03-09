@@ -2,7 +2,7 @@ require_relative 'rental_type'
 
 class InventorySummary
   #the old name "inventory" was not descriptive enough
-  attr_accessor :type
+  attr_accessor :rental_type
 
 	def initialize()
 		@bike_inventory = [RentalType.new("Road"), RentalType.new("Mountain"), RentalType.new("Cross"), RentalType.new("Unicycle"), RentalType.new("Tricycle"), RentalType.new("High Wheel")]
@@ -22,7 +22,7 @@ class InventorySummary
 	def display_all_rental_type_inventory(type)
 		if type == "Bike"
       @inventory.each {|rentalType| puts rentalType.name}
-    elsif type = "Kayak"
+    elsif type == "Kayak"
       @inventory.each {|rentalType| puts rentalType.name}
     end
     puts "..."
