@@ -34,9 +34,9 @@ class ReserveWorkflow
   def get_rental_type(rental_category)
     puts "What type of "+rental_category+" would you like to reserve?"
     inputted_rental_type = gets.strip.chomp
-    if @rental.check_rental_type_inventory(inputted_rental_type, rental_category)
+    if @rental.check_rental_type_inventory(inputted_rental_type)
       reserve_rental(rental_category, inputted_rental_type)
-    elsif @rental.check_rental_type_inventory(inputted_rental_type, rental_category) == false
+    else
       puts inputted_rental_type + ' is not a valid '+rental_category+'!'
       puts "..."
       get_rental_type(rental_category)
