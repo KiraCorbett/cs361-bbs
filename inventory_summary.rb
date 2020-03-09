@@ -15,12 +15,8 @@ class InventorySummary
     @rental_category.each {|type| puts type }
   end
 
-	def check_rental_type_inventory(inputted_rental_type, rental_category)
-    if(rental_category == "Kayak")
-		  return @inventory.any? {|rentalType| rentalType.name = inputted_rental_type}
-    elsif (rental_category == "Bike")
-      return @inventory.any? {|rentalType| rentalType.name = inputted_rental_type}
-    end
+	def check_rental_type_inventory(rental_type_input)
+    return @inventory.any? {|rental_type| rental_type.name == rental_type_input}
   end
 
 	def display_rental_type_inventory(rental_category)
