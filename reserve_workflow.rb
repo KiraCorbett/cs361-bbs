@@ -34,25 +34,22 @@ class ReserveWorkflow
   def get_rental_type(rental_category)
     puts "What type of "+rental_category+" would you like to reserve?"
     inputted_rental_type = gets.strip.chomp
-    if rental_category == "Kayak"
-      if @rental.check_rental_type_inventory(inputted_rental_type)
-        reserve_rental(inputted_rental_type)
-      elsif @rental.check_rental_type_inventory(inputted_rental_type)
-        reserve_rental(inputted_rental_type)
-      end
-    else
+    if @rental.check_rental_type_inventory(inputted_rental_type, rental_category)
+      reserve_rental(rental_category, inputted_rental_type)
+    elsif @rental.check_rental_type_inventory(inputted_rental_type, rental_category) == false
       puts inputted_rental_type + ' is not a valid '+rental_category+'!'
       puts "..."
-      get_rental_type
+      get_rental_type(rental_category)
     end
   end
 
- def reserve_bike(inputted_bike_type)
+ def reserve_rental(rental_category, rental_type)
   id = rand(1..99)
-  Bike.new(id, inputted_bike_type)
+  rental = Object.const_get(rental_category)
+  rental.new(id, rental_type)
   puts "..."
-  puts 'Your ' + inputted_bike_type +  ' bike has been reserved! '
-  puts "The ID for your bike's reservation is " + id.to_s +  '! '
+  puts 'Your ' + rental_type +  ' '+rental_category+' has been reserved! '
+  puts "The ID for your "+rental_category+"'s reservation is " + id.to_s +  '! '
  end
 
  def get_reservation_request()
